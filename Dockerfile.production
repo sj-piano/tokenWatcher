@@ -1,0 +1,30 @@
+# syntax=docker/dockerfile:1
+
+# Set base image
+FROM node:18-alpine
+
+# Set tier
+ENV tier='production'
+
+# Set a directory for the app
+WORKDIR /app
+
+# Install dependencies
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copy environment variables file
+COPY environments/${tier}.env ./.env
+
+# Copy configuration files
+COPY tsconfig.json ./
+
+# Copy the source code.
+# - If you run the container with a bind mount so that you can work on the app, this directory will be overridden.
+COPY src ./src
+
+# Do the initial compilation of the TypeScript files, so that the Nodemon process can start.
+RUN npm run build
+
+# Start the app
+CMD ["npm", "run", "dev"]
