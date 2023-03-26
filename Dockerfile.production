@@ -23,8 +23,8 @@ COPY tsconfig.json ./
 # - If you run the container with a bind mount so that you can work on the app, this directory will be overridden.
 COPY src ./src
 
-# Do the initial compilation of the TypeScript files, so that the Nodemon process can start.
+# Compile the TypeScript files.
 RUN npm run build
 
 # Start the app
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "prod"]

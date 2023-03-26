@@ -9,6 +9,7 @@
     "watchAndCompileTypescript": "npx tsc --watch --rootDir ./src --outDir ./dist",
     "watchAndReloadJavascript": "npx nodemon --quiet --watch ./dist",
     "dev": "concurrently \"npm run watchAndCompileTypescript\" \"npm run watchAndReloadJavascript\"",
+    "prod": "npm run start",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
