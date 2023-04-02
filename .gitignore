@@ -1,3 +1,6 @@
+# VSCode
+token_watcher.code-workspace
+
 # Logs
 logs
 *.log
