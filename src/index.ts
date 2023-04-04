@@ -8,12 +8,12 @@ const app: Express = express();
 const port = process.env.PORT;
 
 app.get('/', (req: Request, res: Response) => {
-  console.log(_.keys(req))
+  console.log(String(_.keys(req)));
   res.send('Token Watcher\n');
 });
 
 app.get('/hello', (req: Request, res: Response) => {
-  console.log(_.keys(req))
+  console.log(String(_.keys(req)));
   res.send('Hello world\n');
 });
 
