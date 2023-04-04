@@ -10,7 +10,7 @@ const port = process.env.PORT;
 app.get('/', (req: Request, res: Response) => {
   //console.log(String(_.keys(req)));
   console.log('Initial endpoint');
-  console.log(String(Object.keys(req)));
+  console.log(String(_.keys(req)));
   res.send('Token Watcher\n');
 });
 
