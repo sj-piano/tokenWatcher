@@ -14,7 +14,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 # Copy environment variables file
-COPY environments/${tier}.env ./.env
+COPY environments/.env.${tier} ./.env
 
 # Copy configuration files
 COPY tsconfig.json ./
