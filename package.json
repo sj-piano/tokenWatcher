@@ -10,7 +10,7 @@
     "watchAndReloadJavascript": "npx nodemon --quiet --watch ./dist",
     "dev": "concurrently \"npm run watchAndCompileTypescript\" \"npm run watchAndReloadJavascript\"",
     "prod": "npm run start",
-    "test": "mocha"
+    "test": "mocha ./test/**/*.test.js"
   },
   "repository": {
     "type": "git",
